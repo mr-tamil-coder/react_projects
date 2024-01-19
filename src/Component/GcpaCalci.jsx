@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import './GcpaCalci.css'
+import Happy from './assests/images/Happy.gif'
+import Sad from './assests/images/Sad.gif'
+
 function GcpaCalci() {
   const [isPopupVisible, setPopupVisibility] = useState(false);
   const showPopup = () => setPopupVisibility(true);
@@ -88,6 +91,7 @@ function GcpaCalci() {
     showPopup();
   };
 
+
   return (
     <div className={`${isPopupVisible ?'active':''} `}>
       <h1>CGPA Calculator</h1>
@@ -117,13 +121,27 @@ function GcpaCalci() {
       </div>
 
       {isPopupVisible && (
-        <div className={`"popup" ${isPopupVisible?'active':'' }`}>
+        <div className={`popup ${isPopupVisible?'active':'' }`}>
           <div className="popup-content">
             <span className="close" onClick={hidePopup}>
               &times;
             </span>
+           
             <h2>CGPA Result</h2>
-            <p>CGPA: {calculateCGPA()}</p>
+            {calculateCGPA() > 5 ? (
+        <>
+        <img src={Happy} alt="Happy Emoji" className="gifSize" />
+        <h3>Congratulations </h3>
+        </>
+      ) : (
+        <>
+        <img src={Sad} alt="Sad Emoji" className="gifSize" />
+        <h3>Try More Marks in Upcoming Exams </h3>
+
+        </>
+      )}
+            <h1>CGPA: <span style={{color:"green"}}>{calculateCGPA()}</span></h1>
+      
           </div>
         </div>
       )}

@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import TodoList from './Component/TodoList'
 import GcpaCalci from './Component/GcpaCalci'
 
 
