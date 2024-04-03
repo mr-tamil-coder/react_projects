@@ -3,42 +3,61 @@
 /* Popup container */
 
 .popup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(4, 4, 4, 0.966);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(4, 4, 4, 0.966);
+}
 
-  }
-  
-  /* Popup content */
-  .popup-content {
-    background-color: #fff;
-    color: rgb(13, 15, 12);
-    padding: 100px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(213, 38, 38, 0.2);
-    text-align: center;
-    position: relative;
-    overflow-y: hidden;
-  }
-  
-  /* Close button */
-  .close {
-    position: absolute;
-    top: 5px;
-    right: 25px;
-    font-size: 50px;
-    cursor: pointer;
-    color: #f02121;
-  }
+/* Popup content */
+.popup-content {
+  background-color: #fff;
+  color: rgb(13, 15, 12);
+  padding: 100px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(213, 38, 38, 0.2);
+  text-align: center;
+  position: relative;
+  overflow-y: hidden;
+}
 
-  /* make gif size small */
-.gifSize{
+/* Close button */
+.close {
+  position: absolute;
+  top: 5px;
+  right: 25px;
+  font-size: 50px;
+  cursor: pointer;
+  color: #f02121;
+}
+
+/* make gif size small */
+.gifSize {
   width: 120px;
   height: 120px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.test {
+  background: #e5fcf5;
+  backdrop-filter: blur(10px);
+  color: black;
+  border-radius: 15px;
+  font-size: bold;
+  padding: 10px 25px;
+  border-radius: 9px;
+}
+
+button {
+  margin: 20px;
+  background-color: #e5fcf5;
+  padding: 12px 30px;
 }
