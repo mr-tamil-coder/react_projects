@@ -37,7 +37,7 @@ function GcpaCalci() {
     const updatedSubjects = [...subjects];
     updatedSubjects[subjectIndex].grade = selectedGrade;
     setSubjects(updatedSubjects);
-    console.log(updatedSubjects)
+    console.log(updatedSubjects);
   };
 
   const calculateCGPA = () => {
@@ -99,17 +99,18 @@ function GcpaCalci() {
 
   return (
     <div className={`${isPopupVisible ? "active" : ""}  `}>
-      <h1>CGPA Calculator - Sem3</h1>
-      <div className="test">
-        <SubjectList
-          subjects={subjects}
-          handleGradeChange={handleGradeChange}
-          generatePDF={generatePDF}
-        />
-        <button onClick={generatePDF}>Generate PDF</button>
-        <button onClick={gcpa}>Calculate CGPA</button>
+      <div className="whole">
+        <h1>CGPA Calculator - Sem3</h1>
+        <div className="test">
+          <SubjectList
+            subjects={subjects}
+            handleGradeChange={handleGradeChange}
+            generatePDF={generatePDF}
+          />
+          <button onClick={generatePDF}>Generate PDF</button>
+          <button onClick={gcpa}>Calculate CGPA</button>
+        </div>
       </div>
-
       {isPopupVisible && (
         <div className={`popup ${isPopupVisible ? "active" : ""}`}>
           <div className="popup-content">
