@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import jsPDF from "jspdf";
-import "jspdf-autotable";
+// import jsPDF from "jspdf";
+// import "jspdf-autotable";
 import "./GcpaCalci.css";
 import Happy from "./assests/images/Happy.gif";
 import Sad from "./assests/images/Sad.gif";
@@ -11,21 +11,22 @@ function GcpaCalci() {
   const hidePopup = () => setPopupVisibility(false);
   const [subjects, setSubjects] = useState([
     {
-      name: "JMA1303 Discrete Mathematics and Number Theory",
+      name: "computer networks",
       credits: 3,
     },
-    { name: "JCS1301 Data Structures", credits: 3 },
-    { name: "JCS1302 Database Management Systems", credits: 3 },
-    { name: "JCS1303 Computer Architecture", credits: 3 },
-    { name: "JCS1321 Object Oriented Programming", credits: 3 },
-    { name: "JCS1311 Data Structures Laboratory", credits: 2 },
+    { name: "operating system", credits: 3 },
+    { name: "design and analysis of algorithm", credits: 3 },
+    { name: "software engineering", credits: 3 },
+    { name: "Network Laboratory ", credits: 2 },
+    { name: "Operating system Laboratory ", credits: 2 },
+    { name: "introduction to embedded system", credits: 3 },
     {
-      name: "JCS1312 Database Management Systems Laboratory",
+      name: "Maths",
       grade: "",
-      credits: 2,
+      credits: 3,
     },
     {
-      name: "JGE1309 Tamils and Technology",
+      name: "aptitude",
       grade: "",
       credits: 1,
     },
@@ -72,42 +73,42 @@ function GcpaCalci() {
     return gradePointsMap[selectedGrade] || 0;
   };
 
-  const generatePDF = () => {
-    const doc = new jsPDF();
+  // const generatePDF = () => {
+  //   const doc = new jsPDF();
 
-    // Add a header to the PDF
-    doc.text("Result", 20, 10);
+  //   // Add a header to the PDF
+  //   doc.text("Result", 20, 10);
 
-    // Create a table with autotable
-    doc.autoTable({
-      theme: "grid",
-      head: [["Subject", "Grade"]],
-      body: subjects.map((subject) => [subject.name, subject.grade]),
-      startY: 20,
-    });
+  //   // Create a table with autotable
+  //   doc.autoTable({
+  //     theme: "grid",
+  //     head: [["Subject", "Grade"]],
+  //     body: subjects.map((subject) => [subject.name, subject.grade]),
+  //     startY: 20,
+  //   });
 
-    // Calculate CGPA and add it to the PDF
-    const cgpa = calculateCGPA();
-    doc.text(`\nCGPA: ${cgpa}`, 20, doc.autoTable.previous.finalY + 10);
+  //   // Calculate CGPA and add it to the PDF
+  //   const cgpa = calculateCGPA();
+  //   doc.text(`\nCGPA: ${cgpa}`, 20, doc.autoTable.previous.finalY + 10);
 
-    // Save the PDF
-    doc.save("result.pdf");
+  //   // Save the PDF
+  //   doc.save("result.pdf");
 
-    // Show the popup with CGPA
-    showPopup();
-  };
+  //   // Show the popup with CGPA
+  //   showPopup();
+  // };
 
   return (
     <div className={`${isPopupVisible ? "active" : ""}  `}>
       <div className="whole">
-        <h1>CGPA Calculator - Sem3</h1>
+        <h1>CGPA Calculator - Sem4</h1>
         <div className="test">
           <SubjectList
             subjects={subjects}
             handleGradeChange={handleGradeChange}
-            generatePDF={generatePDF}
+            // generatePDF={generatePDF}
           />
-          <button onClick={generatePDF}>Generate PDF</button>
+          {/* <button onClick={generatePDF}>Generate PDF</button> */}
           <button onClick={gcpa}>Calculate CGPA</button>
         </div>
       </div>
