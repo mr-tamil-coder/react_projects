@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import jsPDF from "jspdf";
 // import "jspdf-autotable";
 import "./GcpaCalci.css";
+import "./modern.css"
 import Happy from "./assests/images/Happy.gif";
 import Sad from "./assests/images/Sad.gif";
 import SubjectList from "./SubjectList";
@@ -100,7 +101,7 @@ function GcpaCalci() {
 
   return (
     <div className={`${isPopupVisible ? "active" : ""}  `}>
-      <div className="whole">
+      <div className="whole forms">
         <h1>CGPA Calculator - Sem4</h1>
         <div className="test">
           <SubjectList
@@ -109,7 +110,7 @@ function GcpaCalci() {
             // generatePDF={generatePDF}
           />
           {/* <button onClick={generatePDF}>Generate PDF</button> */}
-          <button onClick={gcpa}>Calculate CGPA</button>
+          <button className="result" onClick={gcpa}>Calculate CGPA</button>
         </div>
       </div>
       {isPopupVisible && (

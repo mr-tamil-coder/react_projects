@@ -46,14 +46,15 @@
   justify-content: center;
   align-items: center;
 }
+
 .test {
-  background: #e5fcf5;
   backdrop-filter: blur(10px);
   color: black;
   border-radius: 15px;
   font-size: bold;
   padding: 10px 25px;
   border-radius: 9px;
+  margin: 20ox 0px;
 }
 
 button {
